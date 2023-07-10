@@ -9,14 +9,47 @@ type MessageResponse struct {
 
 type PaymentResponse struct {
 	UserId int `json:"user_id"`
+	DateCreated string `json:"date_created"`
+	DateApproved string `json:"date_approved"`
+	DateLastUpdated string `json:"date_last_updated"`
+	DateExpiration string `json:"date_of_expiration"`
+	MoneyReleaseDate string `json:"money_release_date"`
+	OperationType string `json:"operation_type"`
+	PaymentMethodId string `json:"payment_method_id"`
+	PaymentTypeId string `json:"payment_type_id"`
+	Status string `json:"status"`
+	StatusDetail string `json:"status_detail"`
+	CurrencyId string `json:"currency_id"`
+	Description string `json:"description"`
+
+
 	StatusDetails string `json:"status_details"`
 	OperationId string `json:"operation_id"`
-	DateApproved string `json:"date_approved"`
 	Payer []string `json:"payer"`
 	PaymentMethods PaymentMethod `json:"payment_methods"`
-	PaymentTypeId string `json:"payment_type_id"`
 	Refunds string `json:"refunds"`
 }
+
+type PaymentOverload struct {
+	Id string `json:"id"`
+	Payments []Payments `json:"payments"`
+	Currency string `json:"currency"`
+	Amount int `json:"amount"`
+	Reason string `json:"reason"`
+	CoverageApplied bool `json:"coverage_applied"`
+	CoverageElegible bool `json:"coverage_eligible"`
+	DocumentationRequired bool `json:"documentation_required"`
+	DocumentationStatus string `json:"documentation_status"`
+	Documentation Documentation `json:"documentation"`
+	DateDocumentationDeadline string `json:"date_documentation_deadline"`
+	DateCreated string `json:"date_created"`
+	DateLastUpdated string `json:"date_last_updated"`
+	LiveMode bool `json:"live_mode"`
+
+}
+
+
+
 
 type PaymentRequest struct {
 
@@ -51,5 +84,16 @@ type PayerAddress struct {
 }
 
 type PaymentMethod struct {
-	
+
+}
+
+type Payments struct {
+
+}
+
+type Documentation struct {
+	Type string `json:"type"`
+	Url string `json:"url"`
+	Description string `json:"description"`
+
 }
