@@ -38,6 +38,6 @@ func CreatePOS(Data, yourAccessTokenMercadoPago ...string)(*MessageResponse, err
 
 	if response.StatusCode == 400 {
 		resp, err := parseError {
-			fmt.Println("MISSING_BODY: "HTTP body is required to create pos.)
+			fmt.Fprintln("MISSING_BODY: The request body is missing. Please check the documentation.")
 		}
 	}
