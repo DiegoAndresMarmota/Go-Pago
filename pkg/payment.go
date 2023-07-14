@@ -27,3 +27,31 @@ func (p *Payment) Search() {
 	
 }
 
+// Cancel cancela la orden de pago
+func (p *Payment) Cancel(id string, config interface{}, callback interface{}) {
+	DataCancel := map[string]interface{}{
+		"id":     id,
+		"status": "cancelled",
+	}
+
+	p.Update(DataCancel, config, callback)
+}
+
+// Capture captura un pago
+func (p *Payment) Capture(id string, config interface{}, callback interface{}) {
+	DataCapture := map[string]interface{}{
+		"id": id,
+	}
+
+	p.Capture(DataCapture, config, callback)
+}
+
+
+// Refund reembolsa un pago
+func (p *Payment) Refund(id string, config interface{}, callback interface{}) {
+	DataRefund := map[string]interface{}{
+		"payment_id": id,
+	}
+
+	p.Refund(DataRefund, config, callback)
+}
