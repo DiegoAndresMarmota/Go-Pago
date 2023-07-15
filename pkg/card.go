@@ -1,8 +1,9 @@
-package pkg 
+package pkg
 
+import "github.com/DiegoAndresMarmota/Go-Pago/api/models"
 
 type Card struct {
-	Schema Card
+	Schema models.Card
 }
 
 // All obtiene todas las tarjetas de un usuario guardadas del usuario titular.
@@ -23,7 +24,7 @@ func (c *Card) FindID(userID string, cardID string) {
 // Create crea una nueva tarjeta para un usuario titular.
 func (c *Card) Create(userID string) {
 
-}
+models
 
 // Save crea una nueva tarjeta para un usuario titular.
 func (c *Card) Save(userID string) {
