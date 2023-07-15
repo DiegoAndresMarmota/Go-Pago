@@ -1,4 +1,6 @@
-package model
+package models
+
+import ()
 
 type Card struct {
 	Properties bool

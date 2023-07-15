@@ -1,4 +1,4 @@
-package model
+package models
 import ()
 
 type MessageResponse struct {
@@ -49,13 +49,11 @@ type PaymentOverload struct {
 }
 
 
-
-
 type PaymentRequest struct {
 
 }
 
-type Payer struct {
+type PayerPayment struct {
 	Payer PayerId `json:"payer_id"`
 	Name string `json:"name"`
 	Surname string `json:"surname"`
