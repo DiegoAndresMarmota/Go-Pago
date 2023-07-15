@@ -1,10 +1,10 @@
 package pkg
 
-import ()
+import "github.com/DiegoAndresMarmota/Go-Pago/api/models"
 
 // Payment proporciona acceso a la API para crear pagos.
 type Payment struct {
-	Schema	paymentModel
+	Schema	models.PayerModel
 }
 
 // Create crea un pago

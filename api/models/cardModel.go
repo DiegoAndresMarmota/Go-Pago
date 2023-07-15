@@ -1,13 +1,11 @@
-package model
+package models
+
+import ()
 
 type Card struct {
-	Properties bool
-}
-
-type Properties struct {
 	Id                string `json:"id"`
 	Token             string `json:"token"`
-	userID            string `json:"customer_id"`
+	UserId 			  string `json:"customer_id"`
 	ExpirationMonth   int    `json:"expiration_month"`
 	ExpirationYear    int    `json:"expiration_year"`
 	FirstSixDigits    string `json:"first_six_digits"`

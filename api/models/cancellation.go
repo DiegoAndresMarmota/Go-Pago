@@ -1,4 +1,4 @@
-package model
+package models
 
 import ()
 
@@ -32,8 +32,8 @@ type Cancellation struct {
 	CollectorIde int `json:"collector_id"`
 	Payers Payers `json:"payers"`
 	MarketplaceOwner string `json:"marketplace_owner"`
-	Metadata map[string]interface{} `json:"metadata"`
-	AdditionalInfo AdditionalInfo `json:"additional_info"`
+	Metadata map[string]interface{}
+	AdditionalInfo AdditionalInfoCancel
 	Order Order `json:"order"`
 	ExternalReference string `json:"external_reference"`
 	TransactionAmount float64 `json:"transaction_amount"`
@@ -42,7 +42,7 @@ type Cancellation struct {
 	DeductionSchema string `json:"deduction_schema"`
 	Barcode Barcode `json:"barcode"`
 	Installments int `json:"installments"`
-	TransactionDetails TransactionDetails `json:"transaction_details"`
+	TransactionDetails TransactionDetailsCancel
 	FeeDetails map[string]interface{} `json:"fee_details"`
 	ChargesDetails map[string]interface{} `json:"charges_details"`
 	Captured bool `json:"captured"`
@@ -64,29 +64,29 @@ type Payers struct {
 	LastName string `json:"last_name"`
 	Email string `json:"email"`
 	Type string `json:"type"`
-	Identification Identification `json:"identification"`
-	Phone Phone `json:"phone"`
+	Identification IdentificationPayers
+	Phone PhonePayers `json:"phone"`
 	EntityType string `json:"entity_type"`
 	EntityId int `json:"entity_id"`
 	OperatorId int `json:"operator_id"`
 }
 
-type Identification struct {
+type IdentificationPayers struct {
 	Number int `json:"number"`
 	Type string `json:"type"`
 }
 
-type Phone struct {
+type PhonePayers struct {
 	AreaCode int `json:"area_code"`
 	Number int `json:"number"`
 	Extension int `json:"extension"`
 }
 
-type AdditionalInfo struct {
-	Items Items `json:"items"`
+type AdditionalInfoCancel struct {
+	Items ItemsAddInfo `json:"items"`
 }
 
-type Items struct {
+type ItemsAddInfo struct {
 	Id int `json:"id"`
 	Title string `json:"title"`
 	Description string `json:"description"`
@@ -105,7 +105,7 @@ type Barcode struct {
 	Content string `json:"content"`
 }
 
-type TransactionDetails struct {
+type TransactionDetailsCancel struct {
 	PaymentMethodReferenceId string `json:"payment_method_reference_id"`
 	VerificationCode int `json:"verification_code"`
 	NetReceivedCode int `json:"net_received_code"`
