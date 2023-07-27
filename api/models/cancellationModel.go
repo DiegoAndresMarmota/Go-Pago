@@ -2,7 +2,7 @@ package models
 
 import ()
 
-type Cancellation struct {
+type CancellationModel struct {
 	Id int `json:"id"`
 	DateCreated	string `json:"dateCreated"`
 	DateApproved string `json:"dateApproved"`
