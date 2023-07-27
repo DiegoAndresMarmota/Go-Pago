@@ -2,7 +2,7 @@ package models
 
 import ()
 
-type CardToken struct {
+type CardTokenModel struct {
 	ID string `json:"id"`
 	CustomerID string `json:"customer_id"`
 	CardID string `json:"card_id"`
