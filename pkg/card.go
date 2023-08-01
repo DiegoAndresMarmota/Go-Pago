@@ -1,14 +1,24 @@
 package pkg
 
-import "github.com/DiegoAndresMarmota/Go-Pago/api/models"
+import (
+	"fmt"
+	"net/http"
+	"github.com/DiegoAndresMarmota/Go-Pago/api/models"
+)
+
+const pagoURL = "https://api.gopago.com/v1/"
 
 type Card struct {
 	Schema models.Card
 }
 
 // All obtiene todas las tarjetas de un usuario guardadas del usuario titular.
-func (c *Card) All(userID string) {
-
+func (c *Card) All(userID string) ([]byte, error) {
+	if c, err := http.NewRequest("GET", pagoURL, nil)
+	err != nil {
+		fmt.Errorf("GetAllUsers not found", err)
+	} 
+	return c, nil
 }
 
 // Get obtiene una tarjeta de un usuario guardada del usuario titular, según su id.
@@ -23,8 +33,7 @@ func (c *Card) FindID(userID string, cardID string) {
 
 // Create crea una nueva tarjeta para un usuario titular.
 func (c *Card) Create(userID string) {
-
-models
+}
 
 // Save crea una nueva tarjeta para un usuario titular.
 func (c *Card) Save(userID string) {

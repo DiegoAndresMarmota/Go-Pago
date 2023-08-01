@@ -3,7 +3,7 @@ package api
 import "fmt"
 
 
-const BASEURL = "https://api.mercadopago.com"
+const BASEURL = "https://api.gopago.com"
 
 //
 func getenvToken(OwnToken ...string) string {
