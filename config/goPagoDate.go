@@ -20,3 +20,11 @@ func NewGoPagoDate(args ...interface{}) GoPagoDate {
 		DatePurchase: date,
 	}
 }
+
+func (gpd GoPagoDate) ToString(utc uint8) string {
+	if utc != 0 {
+		utcOff := time.FixedZone("UTC", int(utc))
+		return gpd.DatePurchase.In(utcOff).Format("2023-01-02 13:13:13")
+	}
+	return gpd.DatePurchase.Format("2023-01-02 13:13:13")
+}
